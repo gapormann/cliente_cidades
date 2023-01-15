@@ -1,0 +1,53 @@
+1) criar projeto react com typescript
+npx create-react-app nome_projeto --template typescript
+
+2)Apagar arquivos e código desnecessário
+    a) Apagar comentarios de public/index.html
+    b) mover separar devDependencies de dependencies de produção
+        "@testing-library/jest-dom": "^5.16.5",
+        "@testing-library/react": "^13.4.0",
+        "@testing-library/user-event": "^13.5.0",
+        "@types/jest": "^27.5.2",
+        "@types/node": "^16.18.11",
+        "@types/react": "^18.0.26",
+        "@types/react-dom": "^18.0.10",
+        "typescript": "^4.9.4",
+        "web-vitals": "^2.1.4"
+    c)apagar package-lock.json e executar yarn para resolver dependencias
+
+3) Instalar e configurar ESLint:
+  - npx eslint --init
+  - editar regras em .eslintrc.json:
+    - "react/react-in-jsx-scope": "off",
+    - "react/prop-types": "off"
+    - "indent": [
+        "error",
+        2
+      ],
+
+4) configurar .editorconfig
+
+5) Criar estrutura de pastas
+  - para a estrutura ser versionada, adicionar index.ts em todas as pastas, exceto routes, que deve ser index.tsx
+  - para o ts não gerar erro nos arquivos, adicionar: export { }
+
+6) Instalar: yarn add react-router-dom@6
+   - configurar src/routes/index.tsx
+   - configurar src/App.tsx
+
+7) Instalar mui
+  - yarn add @mui/material @emotion/react @emotion/styled
+  - yarn add @mui/icons-material
+  - inserir no head em public/index.html:
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    - setar na tag body: style='margin:0; padding:0;'
+  - configurar tema em shared/themes
+  - configurar ThemeContext.tsx em shared/contexts
+
